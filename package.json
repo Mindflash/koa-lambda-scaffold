@@ -1,0 +1,27 @@
+{
+  "name": "koa-lambda-scaffold",
+  "version": "1.0.0",
+  "files": [
+    "dist"
+  ],
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "transpile": "rm -rf dist && babel --presets es2017 src --out-dir dist -s",
+    "deploy": "npm run transpile && claudia update --profile claudia",
+    "promote-prod": "claudia set-version --version prod --profile claudia",
+    "create": "npm run transpile && claudia create --handler dist/lambda.handler --deploy-proxy-api --profile claudia --region us-east-1 --role x-api-executor",
+    "start": "node src/local.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2017": "^6.24.1",
+    "claudia": "^2.14.2"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.0.2",
+    "koa": "^2.3.0"
+  }
+}
