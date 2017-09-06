@@ -1,5 +1,5 @@
 # koa-lambda-scaffold
-Basic example of Koa, transpiled via Babel, and deployed to Lambda. Also allows running the service locally for convenient dev experience.
+Basic example of Koa, transpiled via Babel, and deployed to Lambda running Node 6. Also allows running the service locally for convenient dev experience on Node 8.
 
 `npm run create` Sets everything in Lambda and AWS Api Gateway and does an initial deploy to `latest`.
 
