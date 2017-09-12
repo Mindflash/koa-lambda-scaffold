@@ -8,3 +8,6 @@ Basic example of Koa, transpiled via Babel, and deployed to Lambda running Node 
 `npm run promote-prod` Promotes `latest` to `prod`.
 
 `npm start` Runs the Koa service locally for dev.
+
+
+Includes middleware to extract `lambdaEvent` and `lambdaContext` from the headers and place them on `ctx`. Also populates `ctx.env` with process environment variables when run locally and stage variables when run in Api Gateway. Finally, fixes an odditity in the way APIG handles custom domains so that `url` is consistent whether run locally or in Lambda with or without custom domain mappings.
