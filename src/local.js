@@ -3,6 +3,6 @@ const app = require('./app');
 
 const localPort = 3000;
 
-http.createServer(app).listen(localPort, (err, result) => {
+http.createServer(app.callback()).listen(localPort, (err, result) => {
 	console.log('Local Lambda Likely Listening:', localPort);
 });
